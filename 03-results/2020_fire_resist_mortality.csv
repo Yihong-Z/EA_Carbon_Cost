@@ -1,0 +1,5 @@
+"","treatment","N_plot","mean_dead_fire_resist_in_total_live_fire_resist","se_dead_fire_resist_in_total_live_fire_resist"
+"1","burn",56,0.114316815253656,0.0362855275803445
+"2","control",53,0.388098115363859,0.063811336016157
+"3","mech",46,0.0936208134898235,0.0402317876600223
+"4","mechburn",48,0.0233890158599855,0.00226232742929985

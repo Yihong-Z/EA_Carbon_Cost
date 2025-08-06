@@ -1,0 +1,149 @@
+# Readme: Carbon costs of different pathways for reducing fire hazard in the Sierra Nevada
+
+This repository contains the code and data files used to generate the figures and tables in the paper "Carbon costs of different pathways for reducing fire hazard in the Sierra Nevada" by Yihong Zhu, Daniel E. Foster, Brandon M. Collins, Scott L. Stephens, Robert A. York, Ariel T. Roughton, Emily Moghaddas, John Sanders, and John J. Battles.
+
+For any questions, please contact Yihong through [yihong.zhu\@berkeley.edu](mailto:yihong.zhu@berkeley.edu){.email}.
+
+Note: For definition of specific carbon terms, please refer to Table 1 and Appendix S1: Section S3 of the manuscript.
+
+## Citation
+
+Yihong Zhu, Daniel E. Foster, Brandon M. Collins, Scott L. Stephens, Robert A. York, Ariel T. Roughton, Emily Moghaddas, John Sanders, and John J. Battles. Carbon costs of different pathways for reducing fire hazard in the Sierra Nevada. Ecological Applications. *In press*.
+
+## Contents
+
+-   `01-data/`: Contains the data used for statistical analyses, figures, and tables presented in the manuscript. These data were prepared at the plot level, which served as the unit of analysis.
+    -   `Carbon_pool_pre_post_combined.csv` : Carbon storage by pool in 2001 and 2020 for each treatment. This dataset includes only plots with complete inventory data for all carbon pools in both years. This data was used to produce Table S6.
+        -   treatment: Character. Describes the treatment the plot experienced. It has four options: control, burn, mech, mechburn.
+        -   timestep: Character. Indicates the timestep when the observation was recorded. It has two options: "pre_treatment“ for observations in 2001; “post_18” for observations in 2020.
+        -   comp: Integer. Idenifier for the compartment (experimental treatment unit). Plots are nested within comp.
+        -   plot_id: Character. Identifier for each inventory plot, consistent across all timesteps.
+        -   tree_carbon_Live: Numeric (MgC/ha). Aboveground live tree carbon.
+        -   tree_carbon_Snag: Numeric (MgC/ha). Aboveground dead tree carbon.
+        -   understory_carbon: Numeric (MgC/ha). Understory vegetation carbon, including shrub, forb and grass.
+        -   duff_carbon: Numeric (MgC/ha). Duff carbon.
+        -   litter_carbon: Numeric (MgC/ha). Litter carbon.
+        -   fines_carbon: Numeric (MgC/ha). Fine woody debris carbon, including 1-hr, 10-hr, and 100-hr fuels.
+        -   coarse_carbon: Numeric (MgC/ha). Coarse woody debris carbon, including 1000-hr fuels.
+        -   fuels_carbon: Numeric (MgC/ha). Total fuels carbon, which is the sum of duff, litter, fines, and coarse carbon.
+        -   soil_carbon: Numeric (MgC/ha). Mineral soil carbon (0-15 cm).
+        -   all_carbon: Numeric (MgC/ha). Total measured carbon, which is the sum of tree carbon, duff and litter carbon, fuels carbon, and soil carbon.
+    -   `Plot_list_pre_post_comparsion` : List of plots that have complete inventory data for all carbon pools for both 2001 and 2020.
+        -   plot_id: Character. Identifier for each inventory plot, consistent across all timesteps.
+    -   `fig1a_totalcarbon.csv` & `fig1a_totalcarbon.rds`: Data used for statistical analysis of the impacts of treatments on total carbon stocks. These files include the same set of plots as in `Carbon_pool_pre_post_combined.csv`, but are formatted specifically for direct use in regression and visualization.
+        -   treatment: Character. Describes the treatment the plot experienced. It has four options: control, burn, mech, mechburn.
+        -   timestep: Character. Indicates the timestep when the observation was recorded. It has two options: "pre_treatment“ for observations in 2001; “post_18” for observations in 2020.
+        -   comp: Integer. Identifier for the compartment (experimental treatment unit). Plots are nested within comp.
+        -   plot_id: Character. Identifier for each inventory plot, consistent across all timesteps.
+        -   tree_carbon: Numeric (MgC/ha). Aboveground tree carbon, including both live and dead trees.
+        -   understory_carbon: Numeric (MgC/ha). Understory vegetation carbon, including shrub, forb and grass.
+        -   fuels_carbon: Numeric (MgC/ha). Total fuels carbon, which is the sum of duff, litter, fines, and coarse carbon.
+        -   soil_carbon: Numeric (MgC/ha). Mineral soil carbon (0-15 cm).
+        -   all_carbon: Numeric (MgC/ha). Total measured carbon, which is the sum of tree carbon, duff and litter carbon, fuels carbon, and soil carbon.
+        -   treatment_factor: Factor. Categorical variable indicating the treatment type, used for regression analysis and visualization.
+        -   timestep_factor: Factor. Categorical variable indicating the timestep, used for regression analysis and visualization.
+    -   `fig2_largepercentage.csv` & `fig2_largepercentage.rds`: Data used for statistical analysis of the impacts of treatments on large live tree carbon percentage.
+        -   treatment: Character. Describes the treatment the plot experienced. It has four options: control, burn, mech, mechburn.
+        -   timestep: Character. Indicates the timestep when the observation was recorded. It has two options: "pre_treatment“ for observations in 2001; “post_18” for observations in 2020.
+        -   treatment_factor: Factor. Categorical variable indicating the treatment type, used for regression analysis and visualization.
+        -   timestep_factor: Factor. Categorical variable indicating the timestep, used for regression analysis and visualization.
+        -   comp: Integer. Identifier for the compartment (experimental treatment unit). Plots are nested within comp.
+        -   plot_id: Character. Identifier for each inventory plot, consistent across all timesteps.
+        -   tree_carbon_large: Numeric (MgC/ha). Aboveground large live tree carbon (DBH\>=72.6cm).
+        -   tree_carbon: Numeric (MgC/ha). Aboveground tree carbon, including both live and dead trees.
+        -   large_percentage: Numeric (0-100). Calculated by tree_carbon_large / tree_carbon \* 100. This column is used for visualization.
+        -   large_percentage_01: Numeric (0-1). Calculated by tree_carbon_large / tree_carbon. This column is used for regression analysis.
+    -   `fig2a_firepercentage.csv` & `fig2a_firepercentage.rds`: Data used for statistical analysis of the impacts of treatments on species-specific fire-resistant carbon percentage.
+        -   treatment: Character. Describes the treatment the plot experienced. It has four options: control, burn, mech, mechburn.
+        -   timestep: Character. Indicates the timestep when the observation was recorded. It has two options: "pre_treatment“ for observations in 2001; “post_18” for observations in 2020.
+        -   treatment_factor: Factor. Categorical variable indicating the treatment type, used for regression analysis and visualization.
+        -   timestep_factor: Factor. Categorical variable indicating the timestep, used for regression analysis and visualization.
+        -   comp: Integer. Identifier for the compartment (experimental treatment unit). Plots are nested within comp.
+        -   plot_id: Character. Identifier for each inventory plot, consistent across all timesteps.
+        -   fire_tolerant_carbon: Numeric (MgC/ha). Carbon stored in fire-resistant species, including ponderosa pine and sugar pine (DBH\>=11.4cm).
+        -   tree_carbon: Numeric (MgC/ha). Aboveground tree carbon, including both live and dead trees.
+        -   fire_percentage: Numeric (0-100). Calculated by fire_tolerant_carbon / tree_carbon \* 100. This column is used for visualization.
+        -   fire_percentage_01: Numeric (0-1). Calculated by fire_tolerant_carbon / tree_carbon. This column is used for regression analysis.
+    -   `recovery_burn_control.csv`: Live vegetation carbon recovery rate in Burn-only and Control units.
+        -   treatment: Character. Describes the treatment the plot experienced. It has two options: control, burn.
+        -   comp: Integer. Identifier for the compartment (experimental treatment unit). Plots are nested within comp.
+        -   plot_id: Character. Identifier for each inventory plot, consistent across all periods.
+        -   period: Character. Indicates the period of recovery. It has three options: Burn_1, Burn_2, Burn_3.
+        -   live_vegetation_recovery_rate: Numeric (MgC/ha/yr). Live vegetation carbon change during the period divided by number of years within this period.
+        -   live_vegetation_carbon: Numeric (MgC/ha). Live vegetation carbon before treatment.
+        -   live_veg_disturbance: Numeric (MgC/ha/yr). Disturbance intensity, calculated as live vegetation carbon immediately after treatment minus pre-treatment.
+    -   `recovery_surface_fuels_burn_control.csv`: Surface fuels carbon recovery rate in Burn-only and Control units.
+        -   treatment: Character. Describes the treatment the plot experienced. It has two options: control, burn.
+        -   comp: Integer. Identifier for the compartment (experimental treatment unit). Plots are nested within comp.
+        -   plot_id: Character. Identifier for each inventory plot, consistent across all periods.
+        -   period: Character. Indicates the period of recovery. It has three options: Burn_1, Burn_2, Burn_3.
+        -   fuels_recovery_rate: Numeric (MgC/ha/yr). Surface fuels carbon change during the period divided by number of years within this period.
+        -   surface_carbon: Numeric (MgC/ha/yr). Surface fuels carbon before treatment.
+        -   fuels_disturbance: Numeric (MgC/ha). Disturbance intensity, calculated as surface fuels carbon immediately after treatment minus pre-treatment.
+    -   `FOFEM_emission(by_plot)_Rx.csv`: Total prescribed fire carbon emission estimated by FOFEM.
+        -   plot_id: Character. Identifier for each inventory plot.
+        -   treatment: Character. Describes the treatment the plot experienced. It has two options: Burn, MechBurn.
+        -   total_emission: Numeric (MgC/ha). Total carbon emission from different entries of fire estimated by FOFEM for each plot.
+    -   `wood_removal_sum_2002_2018(mill_update)_by_plot.csv`: Total wood removal for each plot.
+        -   treatment: Character. Describes the treatment the plot experienced. It has two options: mech, mechburn.
+        -   plot_id: Character. Identifier for each inventory plot.
+        -   comp: Integer. Identifier for the compartment (experimental treatment unit). Plots are nested within comp.
+        -   wood_removal: Numeric (MgC/ha). Total wood removal from all the harvest for each plot.
+    -   `2020_emission_plot.csv`: Carbon emission of a simulated wildfire in 2020 estimated by FOFEM.
+        -   plot_id: Character. Identifier for each inventory plot.
+        -   treatment: Character. Describes the treatment the plot experienced. It has four options: control, burn, mech, mechburn.
+        -   carbon: Numeric (MgC/ha). Carbon emission of a simulated wildfire in 2020 estimated by FOFEM for each plot.
+    -   `FVS-PotFire.csv`: P-torch and P-mort outputs from FVS.
+        -   StandID: Character. Identifier for each inventory plot, equivalent to 'plot_id' in other data files.
+        -   Year: Integer. Indicates the year of the simulated wildfire (2020).
+        -   PTorch_Sev: Numeric(0-1). P-torch index for each plot.
+        -   Mortality_BA_Sev: Numeric(0-100). P-mort for each plot.
+        -   treatment: Character. Describes the treatment the plot experienced. It has four options: control, burn, mech, mechburn.
+    -   `2020_large_tree_mortality_by_plot.csv`: % Large tree dead in a wildfire simulated in 2020.
+        -   treatment: Character. Describes the treatment the plot experienced. It has four options: control, burn, mech, mechburn.
+        -   plot_id: Character. Identifier for each inventory plot.
+        -   dead_large: Numeric (MgC/ha). Aboveground large live tree carbon that expected to be dead after a wildfire simulated in 2020.
+        -   total_large_live_carbon: Numeric (MgC/ha). Aboveground large live tree carbon before a wildfire happened in 2020.
+        -   dead_large_in_total_live_large: Numeric (0-1). Percentage of large tree dead, calculated as the carbon in large trees predicted to die during the wildfire (dead_large) divided by the total large live tree carbon before the wildfire (total_large_live_carbon).
+    -   `2020_fire_resist_mortality_by_plot.csv`: % Fire-resistant dead in a wildfire simulated in 2020.
+        -   treatment: Character. Describes the treatment the plot experienced. It has four options: control, burn, mech, mechburn.
+        -   plot_id: Character. Identifier for each inventory plot.
+        -   total_dead_fire_resist: Numeric (MgC/ha). Aboveground live tree carbon in fire-resistant species that expected to be dead after a wildfire simulated in 2020.
+        -   total_live_carbon_fire_resist: Numeric (MgC/ha). Aboveground live tree carbon stored in fire-resistant species before a wildfire simulated in 2020.
+        -   dead_fire_resist_in_total_live_fire_resist: Numeric (0-1). Percentage of fire-resistant dead, calculated as the carbon in fire-resistant species predicted to die during the wildfire (total_dead_fire_resist) divided by the total fire-resistant species carbon before the wildfire (total_live_carbon_fire_resist).
+    -   `2020_large_survive_by_plot.csv`: Large tree carbon that expected to live after a wildfire simulated in 2020.
+        -   treatment: Character. Describes the treatment the plot experienced. It has four options: control, burn, mech, mechburn.
+        -   plot_id: Character. Identifier for each inventory plot.
+        -   total_survive: Numeric (MgC/ha). Aboveground live tree carbon that expected to still be live after a wildfire simulated in 2020.
+        -   survive_large: Numeric (MgC/ha). Aboveground large live tree carbon that expected to still be live after a wildfire simulated in 2020.
+    -   `2020_fire_resist_survive_by_plot.csv`: Fire-resistant tree carbon that expected to live after a wildfire simulated in 2020.
+        -   treatment: Character. Describes the treatment the plot experienced. It has four options: control, burn, mech, mechburn.
+        -   plot_id: Character. Identifier for each inventory plot.
+        -   total_survive: Numeric (MgC/ha). Aboveground live tree carbon that expected to still be live after a wildfire simulated in 2020. Same as above.
+        -   survive_fire_resist: Numeric (MgC/ha). Aboveground live tree carbon in fire-resistant species that expected to still be live after a wildfire simulated in 2020.
+-   `02-scripts_and_sheets/` : Contains R scripts for statistical analyses, figures, and tables presented in the manuscript. Contains the sheets for carbon cost assessment.
+    -   `TableS6.R` : Contains the code used to generate `TableS6_carbon_summary.csv`.
+    -   `Models.R` : Contains the code for statistical analyses. The model results are saved to `03-results` for later figure or table generation.
+    -   `Figures_TableS7-11.R` : Contains the code used to generate all figures in the manuscript. The model objects used to generate figures are saved to `03-results` for reproducibility.
+    -   `Table2.R` : Contains the code used to generate values in Table 2 in the manuscript. The summary results are saved to `03-results`.
+    -   `Table3_TableS14.R` : Contains the code used to generate values in Table 3 and Table S14 in the manuscript. The summary results are saved to `03-results`.
+    -   `CarbonCost.xlsx` : Excel sheet for carbon cost assessment for the four treatement regimes with and without simulate wildfire.
+-   `03-results/` :
+    -   `TableS6_carbon_summary.csv`: Created by TableS6.R
+    -   `fig1a_totalcarbon_lm.rds`: R model object for the impacts of treatments on total carbon stocks, used to generate Figure 1 and Table S7.
+    -   `fig2_largepercentage_beta.RDS`: R model object the impacts of treatments on large live tree carbon percentage, used to generate Figure 3 and Table S10.
+    -   `fig3_firetolerantn_beta.rds`: R model object for the impacts of treatments on species-specific fire-resistant carbon percentage, used to generate Figure 4 and Table S11.
+    -   `fig4_veg_recover_lme1.rds`: R model object for live vegetation carbon recovery rate in 1st recovery period, used to generate Figure 2 and Table S8.
+    -   `fig4_veg_recover_lme2.rds`: R model object for live vegetation carbon recovery rate in 2nd recovery period, used to generate Figure 2 and Table S8.
+    -   `fig4_veg_recover_lme3.rds`: R model object for live vegetation carbon recovery rate in 3rd recovery period, used to generate Figure 2 and Table S8.
+    -   `fig4_surface_recover_lme1.rds`: R model object for surface fuels carbon recovery rate in 1st recovery period, used to generate Figure 2 and Table S9.
+    -   `fig4_surface_recover_lme2.rds`: R model object for surface fuels carbon recovery rate in 2nd recovery period, used to generate Figure 2 and Table S9.
+    -   `fig4_surface_recover_lme3.rds`: R model object for surface fuels carbon recovery rate in 3rd recovery period, used to generate Figure 2 and Table S9.
+    -   `FOFEM_emission_summary(by_plot)_Rx.csv`: Summary of total prescribed fire carbon emission (estimated by FOFEM) by treatment, used to generate Table 2.
+    -   `wood_removal_summary_2002_2018(mill_update).csv`: Summary of total wood removal by treatment, used to generate Table 2.
+    -   `net_change.csv`: Summary of NECB and NEP by treatment, used to generate Table 2.
+    -   `2020_wildfire_emission_se.csv`: Summary of carbon emission of a simulated wildfire in 2020 (estimated by FOFEM) by treatment, used to generate Table 3.
+    -   `2020_potfire_metric.csv`: Summary of P-torch and P-mort of a simulated wildfire in 2020 (estimated by FVS) by treatment, used to generate Table 3.
+    -   `2020_large_tree_mortality.csv`: Summary of % Large tree dead in a wildfire simulated in 2020 by treatment, used to generate Table 3.
+    -   `2020_fire_resist_mortality.csv`: Summary of % Fire-resistant dead in a wildfire simulated in 2020 by treatment, used to generate Table 3.
+    -   `2020_survive_summary.csv`: Summary of Large tree carbon and fire-resistant carbon that expected to live after a wildfire simulated in 2020 by treatment, used to generate Table S14.
