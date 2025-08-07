@@ -2,7 +2,7 @@
 
 This repository contains the code and data files used to generate the figures and tables in the paper "Carbon costs of different pathways for reducing fire hazard in the Sierra Nevada" by Yihong Zhu, Daniel E. Foster, Brandon M. Collins, Scott L. Stephens, Robert A. York, Ariel T. Roughton, Emily Moghaddas, John Sanders, and John J. Battles.
 
-For any questions, please contact Yihong through [yihong.zhu\@berkeley.edu](mailto:yihong.zhu@berkeley.edu){.email}.
+For any questions, please contact Yihong through [yihong.zhu\@berkeley.edu](mailto:yihong.zhu@berkeley.edu).
 
 Note: For definition of specific carbon terms, please refer to Table 1 and Appendix S1: Section S3 of the manuscript.
 
