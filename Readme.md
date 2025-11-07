@@ -1,6 +1,6 @@
 # Readme: Carbon costs of different pathways for reducing fire hazard in the Sierra Nevada
 
-This repository contains the code and data files used to generate the figures and tables in the paper "Carbon costs of different pathways for reducing fire hazard in the Sierra Nevada" by Yihong Zhu, Daniel E. Foster, Brandon M. Collins, Scott L. Stephens, Robert A. York, Ariel T. Roughton, Emily Moghaddas, John Sanders, and John J. Battles.
+This repository contains the code and data files used to generate the figures and tables in the paper "[Carbon costs of different pathways for reducing fire hazard in the Sierra Nevada](http://dx.doi.org/10.1002/eap.70111)" by Yihong Zhu, Daniel E. Foster, Brandon M. Collins, Scott L. Stephens, Robert A. York, Ariel T. Roughton, Emily E.Y. Moghaddas, John E. Sanders, and John J. Battles.
 
 For any questions, please contact Yihong through [yihong.zhu\@berkeley.edu](mailto:yihong.zhu@berkeley.edu).
 
@@ -8,7 +8,7 @@ Note: For definition of specific carbon terms, please refer to Table 1 and Appen
 
 ## Citation
 
-Yihong Zhu, Daniel E. Foster, Brandon M. Collins, Scott L. Stephens, Robert A. York, Ariel T. Roughton, Emily Moghaddas, John Sanders, and John J. Battles. Carbon costs of different pathways for reducing fire hazard in the Sierra Nevada. Ecological Applications. *In press*.
+Zhu, Yihong, Daniel E. Foster, Brandon M. Collins, Scott L. Stephens, Robert A. York, Ariel T. Roughton, Emily E.Y. Moghaddas, John E. Sanders, and John J. Battles. 2025. “Carbon Costs of Different Pathways for Reducing Fire Hazard in the Sierra Nevada.” *Ecological Applications*. 35(7): e70111. <https://doi.org/10.1002/eap.70111>
 
 ## Contents
 
